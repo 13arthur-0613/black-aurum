@@ -1,11 +1,21 @@
 function explorePlatform() {
-    document.querySelector(".cards").scrollIntoView({
+    document.querySelector("#markets").scrollIntoView({
         behavior: "smooth"
     });
 }
 
-console.log("BLACK AURUM iniciada!");
-
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Plataforma carregada com sucesso.");
+    console.log("BLACK AURUM Dashboard loaded.");
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        card.addEventListener("mouseenter", function() {
+            card.style.borderColor = "#D6B56D";
+        });
+
+        card.addEventListener("mouseleave", function() {
+            card.style.borderColor = "#302A20";
+        });
+    });
 });
