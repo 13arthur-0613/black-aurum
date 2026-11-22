@@ -1,47 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLACK AURUM</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACK AURUM | Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-
-    <header>
-        <h1>BLACK AURUM</h1>
-        <p>INVESTMENT · FINANCE · TECHNOLOGY</p>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h2>Welcome to Black Aurum</h2>
-            <p>Discover the world of finance, investments and technology.</p>
-            <button onclick="explorePlatform()">Explore Platform</button>
-        </section>
-
-        <section class="cards">
-            <div class="card">
-                <h3>Financial Education</h3>
-                <p>Learn the fundamentals of finance.</p>
-            </div>
-
-            <div class="card">
-                <h3>Investments</h3>
-                <p>Discover the world of investing.</p>
-            </div>
-
-            <div class="card">
-                <h3>Artificial Intelligence</h3>
-                <p>Explore the future of financial technology.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>BLACK AURUM © 2026</p>
-    </footer>
-
+<header>
+    <h1>BLACK AURUM</h1>
+    <p>INVESTMENT · FINANCE · TECHNOLOGY</p>
+</header>
+<nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#markets">Markets</a>
+    <a href="#education">Education</a>
+    <a href="#ai">Aurum AI</a>
+</nav>
+<main id="dashboard">
+    <h2>Financial Overview</h2>
+    <p class="subtitle">Welcome to your financial dashboard.</p>
+    <section class="stats">
+        <div class="card">
+            <span>Portfolio Value</span>
+            <h3>€25,000.00</h3>
+            <small>DEMO ACCOUNT</small>
+        </div>
+        <div class="card">
+            <span>Monthly Performance</span>
+            <h3 class="gold">+4.8%</h3>
+            <small>SIMULATED DATA</small>
+        </div>
+        <div class="card">
+            <span>Available Balance</span>
+            <h3>€8,500.00</h3>
+            <small>DEMO ACCOUNT</small>
+        </div>
+    </section>
+    <section class="panel" id="markets">
+        <h2>Market Overview</h2>
+        <div class="chart">
+            <div style="height:35%"></div>
+            <div style="height:55%"></div>
+            <div style="height:45%"></div>
+            <div style="height:70%"></div>
+            <div style="height:60%"></div>
+            <div style="height:85%"></div>
+            <div style="height:75%"></div>
+            <div style="height:95%"></div>
+        </div>
+        <p>Illustrative market performance · Not real-time data</p>
+    </section>
+    <section class="stats">
+        <div class="card" id="education">
+            <h3>Financial Education</h3>
+            <p>Learn finance and investment fundamentals.</p>
+        </div>
+        <div class="card">
+            <h3>Investment Simulator</h3>
+            <p>Explore investments with virtual money.</p>
+        </div>
+        <div class="card" id="ai">
+            <h3>Aurum AI</h3>
+            <p>Discover financial technology and AI.</p>
+        </div>
+    </section>
+</main>
+<footer>BLACK AURUM © 2026 · EDUCATION & TECHNOLOGY</footer>
 </body>
 </html>
