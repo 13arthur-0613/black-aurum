@@ -3,70 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLACK AURUM | Dashboard</title>
+<title>BLACK AURUM | Trading Terminal</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lightweight-charts@4.2.3/dist/lightweight-charts.standalone.production.js"></script>
 <script src="script.js" defer></script>
 </head>
 <body>
-<header>
-    <h1>BLACK AURUM</h1>
-    <p>INVESTMENT · FINANCE · TECHNOLOGY</p>
+<header class="topbar">
+  <div class="brand">
+    <h1>BLACK <span>AURUM</span></h1>
+    <small>INVESTMENT · FINANCE · TECHNOLOGY</small>
+  </div>
+  <div class="account">
+    <span class="demo">DEMO ACCOUNT</span>
+    <span>Virtual balance: €25,000.00</span>
+  </div>
 </header>
-<nav>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#markets">Markets</a>
-    <a href="#education">Education</a>
-    <a href="#ai">Aurum AI</a>
-</nav>
-<main id="dashboard">
-    <h2>Financial Overview</h2>
-    <p class="subtitle">Welcome to your financial dashboard.</p>
-    <section class="stats">
-        <div class="card">
-            <span>Portfolio Value</span>
-            <h3>€25,000.00</h3>
-            <small>DEMO ACCOUNT</small>
-        </div>
-        <div class="card">
-            <span>Monthly Performance</span>
-            <h3 class="gold">+4.8%</h3>
-            <small>SIMULATED DATA</small>
-        </div>
-        <div class="card">
-            <span>Available Balance</span>
-            <h3>€8,500.00</h3>
-            <small>DEMO ACCOUNT</small>
-        </div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <p class="menu-label">WORKSPACE</p>
+    <a class="active" href="#terminal">◈ Trading Terminal</a>
+    <a href="#portfolio">▤ Portfolio</a>
+    <a href="#markets">⌁ Markets</a>
+    <a href="#education">▣ Academy</a>
+    <a href="#ai">✧ Aurum AI</a>
+    <div class="side-note">
+      <span>BLACK AURUM</span>
+      <small>Educational platform</small>
+    </div>
+  </aside>
+
+  <main id="terminal">
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">MARKET ANALYSIS</p>
+        <h2>Trading Terminal</h2>
+        <p class="muted">Explore markets in a simulated environment.</p>
+      </div>
+      <span class="demo">SIMULATED DATA</span>
+    </div>
+
+    <section class="toolbar">
+      <select id="marketType">
+        <option value="stocks">Stocks</option>
+        <option value="crypto">Crypto</option>
+        <option value="forex">Forex</option>
+      </select>
+      <select id="asset">
+        <option value="AAPL">Apple · AAPL</option>
+        <option value="NVDA">NVIDIA · NVDA</option>
+        <option value="MSFT">Microsoft · MSFT</option>
+      </select>
+      <div class="chart-types">
+        <button class="type-btn active" data-type="candle">Candles</button>
+        <button class="type-btn" data-type="line">Line</button>
+      </div>
     </section>
-    <section class="panel" id="markets">
-        <h2>Market Overview</h2>
-        <div class="chart">
-            <div style="height:35%"></div>
-            <div style="height:55%"></div>
-            <div style="height:45%"></div>
-            <div style="height:70%"></div>
-            <div style="height:60%"></div>
-            <div style="height:85%"></div>
-            <div style="height:75%"></div>
-            <div style="height:95%"></div>
+
+    <section class="chart-panel">
+      <div class="chart-heading">
+        <div>
+          <h3 id="assetName">Apple · AAPL</h3>
+          <span id="price">Loading...</span>
         </div>
-        <p>Illustrative market performance · Not real-time data</p>
+        <span class="market-status">● DEMO MARKET</span>
+      </div>
+      <div class="intervals">
+        <button data-interval="1m">1m</button>
+        <button data-interval="5m">5m</button>
+        <button data-interval="15m">15m</button>
+        <button data-interval="30m">30m</button>
+        <button data-interval="1h" class="active">1H</button>
+        <button data-interval="4h">4H</button>
+        <button data-interval="1d">1D</button>
+      </div>
+      <div id="chart"></div>
+      <div class="chart-footer">
+        <span>Illustrative prices · Not real market quotations</span>
+        <span>BLACK AURUM CHARTS</span>
+      </div>
     </section>
-    <section class="stats">
-        <div class="card" id="education">
-            <h3>Financial Education</h3>
-            <p>Learn finance and investment fundamentals.</p>
+
+    <section class="lower-grid">
+      <div class="panel" id="portfolio">
+        <p class="eyebrow">DEMO PORTFOLIO</p>
+        <h3>€25,000.00</h3>
+        <p class="muted">Virtual starting balance</p>
+        <div class="portfolio-line">
+          <span>Available virtual balance</span>
+          <strong id="balance">€25,000.00</strong>
         </div>
-        <div class="card">
-            <h3>Investment Simulator</h3>
-            <p>Explore investments with virtual money.</p>
-        </div>
-        <div class="card" id="ai">
-            <h3>Aurum AI</h3>
-            <p>Discover financial technology and AI.</p>
-        </div>
+        <p class="notice">No real money or real orders are involved.</p>
+      </div>
+
+      <div class="panel" id="markets">
+        <p class="eyebrow">MARKET WATCH</p>
+        <h3>Watchlist</h3>
+        <div class="watch-row"><span>Apple</span><strong>AAPL</strong></div>
+        <div class="watch-row"><span>NVIDIA</span><strong>NVDA</strong></div>
+        <div class="watch-row"><span>Microsoft</span><strong>MSFT</strong></div>
+        <div class="watch-row"><span>Bitcoin</span><strong>BTC</strong></div>
+        <div class="watch-row"><span>EUR / USD</span><strong>EURUSD</strong></div>
+      </div>
     </section>
-</main>
+
+    <section class="panel history">
+      <p class="eyebrow">ACTIVITY</p>
+      <h3>Demo activity</h3>
+      <p class="muted">Your simulated activity will appear here in a future update.</p>
+    </section>
+  </main>
+</div>
+
 <footer>BLACK AURUM © 2026 · EDUCATION & TECHNOLOGY</footer>
 </body>
 </html>
